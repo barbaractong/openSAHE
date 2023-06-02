@@ -1,0 +1,21 @@
+---
+version: 0.1
+framesNumber: 4
+frameRate: 4
+nodalVoltages: 
+  - active: false
+  - filePath: ./mesh_nodal_voltages.txt
+  - exportGmsh: true
+measurementOutputPath: ./mesh_head_measurements_forwardProblem.txt
+regionResistivities: # None or properties
+  - region:
+    - type: uniform
+    - meshTag: [42, 43]
+    - uniformRho: [9.68]
+objects: # None or properties
+  - type: sphere
+  - regionTags: [42, 43]
+  - unit: mm
+  - center: [125.0, 50.0, 145.0]
+  - radius: 10
+  - rho: [-1.0, 20.0]

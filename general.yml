@@ -1,0 +1,33 @@
+---
+version: 0.1
+outputDir: ./outfiles/
+processing:
+  - activeMKL: false
+  - approximationError: false
+  - anatomicalAtlas: false
+  - forwardProblem: true
+  - inverseProblem: false
+debug:
+  - kglobal: false
+  - jacobian: false
+  - gaussainHp: false
+current:
+  - frequency: 1000.0
+  - unit: mA
+  - direction: +-
+  - method: 
+    - name: bipolar_skip
+    - skip: 8
+    - injectionPairs: [[5 32], [2 32], [1 32], [6 32], [4 32], [5 31], [5 30], [2 27], [1 28], [1 25], [6 26], [4 29], [2 23], [10 30], [9 31], [3 32], [7 32], [1 24], [3 21], [7 18], [4 22], [6 17], [8 31], [11 30], [1 20], [13 31], [15 30], [2 19], [14 31], [16 18], [12 21]]
+voltage:
+  - method: 
+    - name: differential_skip
+    - removeInjectingPair: false # veriricar
+    - direction: -+
+    - skip: 4
+  - referenceVoltageNode:
+    - method:
+      - name: coords
+      - nodeInformation:
+        - node: [127.937, 123.356, 70.7998]
+        - unit: mm
