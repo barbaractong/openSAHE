@@ -27,10 +27,10 @@ from scipy import sparse as scipySparse
 
 def isFeLap():
     """returns True if computer name is felap3"""
-    return os.uname()[1] == 'felap3'
+    return False
 
 def isUkko2():
-    return os.uname()[1].startswith('ukko2')
+    return False
 
 # set number of processors
 if isFeLap():
@@ -101,7 +101,7 @@ def getNow():
 def showModulesVersion():
     print("\n")
     print("======== machine name =========")
-    print("Machine: %s" % os.uname()[1])
+    print("Machine: %s" % os.name)
     print("Using %d cores of a total of %d..." % (nCores, os.cpu_count()))
     print("======== modules Version =========")
     print('Numpy version: ' + np.version.version)
