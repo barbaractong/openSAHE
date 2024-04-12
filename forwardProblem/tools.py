@@ -27,10 +27,10 @@ from scipy import sparse as scipySparse
 
 def isFeLap():
     """returns True if computer name is felap3"""
-    return False
+    return os.uname()[1] == 'felap3'
 
 def isUkko2():
-    return False
+    return os.uname()[1].startswith('ukko2')
 
 # set number of processors
 if isFeLap():
